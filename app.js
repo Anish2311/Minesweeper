@@ -1,4 +1,4 @@
-ndim = 10
+ndim = 9
 dim = Math.min(window.innerWidth,window.innerHeight)/ndim
 grid = []
 initialize()
@@ -11,7 +11,7 @@ function initialize(){
         for(let j = 0; j < ndim; j++){
             grid.push(' ')
             markup = `
-            <div class="block" style="width: ${dim - 4}px; height: ${dim - 8}px; font-size:${(dim - 4)/1.5}px;" id="${(i + j * ndim).toString()}" onclick="clic(${i + j * ndim})"></div>
+            <div class="block" style="width: ${dim - 4}px; height: ${dim - 10}px; font-size:${(dim - 4)/1.5}px;" id="${(i + j * ndim).toString()}" onclick="handleClick(${i + j * ndim})"></div>
             `
             m += markup
         }
@@ -30,7 +30,7 @@ function mining(){
     }
 }
 
-function clic(l){
+function handleClick(l){
     let index = l
     if(grid[index] == 'bomb'){
         show()
@@ -96,7 +96,7 @@ function check(j){
 function show(){
     for(let i = 0; i < grid.length; i++){
         if(grid[i] == 'bomb'){
-            document.getElementById(`${i}`).innerHTML = `<ion-icon name="skull-outline" style="margin-top: 8px; color: rgb(100,50,50)"></ion-icon>`
+            document.getElementById(`${i}`).innerHTML = `<ion-icon name="skull-outline" style="color: rgb(100,50,50)"></ion-icon>`
         }
     }
     setTimeout(alert,1000);
