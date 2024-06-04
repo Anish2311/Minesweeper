@@ -1,0 +1,35 @@
+.block{
+    background-color: grey;
+    margin: 2px;
+    border-radius: 4px;
+    transition: ease-in-out 0.2s all;
+    text-align: center;
+    padding-top: 4px;
+    font-weight: 600;
+    color: rgb(200,200,200);
+}
+
+.block:hover{
+    scale: 1.05;
+}
+
+.block:active{
+    scale: 1.0;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 0rem;
+    left: 25%;
+}
