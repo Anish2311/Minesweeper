@@ -1,5 +1,6 @@
 ndim = 9
-dim = Math.min(window.innerWidth,window.innerHeight)/ndim
+pl = Math.min(window.innerWidth,window.innerHeight)
+dim = pl/ndim
 grid = []
 initialize()
 
@@ -17,6 +18,14 @@ function initialize(){
         }
         m += `</div>`
         document.getElementById('cont').insertAdjacentHTML('beforeend',m)
+    }
+    if(pl == window.innerWidth){
+        document.getElementById('cont').style.left = '0px'
+        document.getElementById('cont').style.top = `${(window.innerHeight/2) - (pl/2)}px`
+    }
+    else{
+        document.getElementById('cont').style.top = '0px'
+        document.getElementById('cont').style.left = `${(window.innerWidth/2) - (pl/2)}px`
     }
     mining()
 }
